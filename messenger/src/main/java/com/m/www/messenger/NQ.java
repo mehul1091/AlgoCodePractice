@@ -1,6 +1,10 @@
 package com.m.www.messenger;
 
 public class NQ {
+
+//	Code for backtracking N Queen Problem, Explaination in Video
+//	https://www.geeksforgeeks.org/backtracking-set-3-n-queen-problem/
+	
 	
 	public static void main(String[] args) {
 		new NQ().solve();
