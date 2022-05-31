@@ -1,7 +1,7 @@
 
 import com.arrays.TwoSum;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,24 +13,27 @@ import java.util.List;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TwoSumTest {
 
-    @Data
-    @AllArgsConstructor
-    class TestCase{
-        int[] input;
+    @Getter
+    @Setter
+    class TestCaseTwoSum extends TestCase{
         int target;
-        int[] output;
+
+        public TestCaseTwoSum(int[] input, int target, int[] output) {
+            super(input, output);
+            this.target = target;
+        }
     }
 
     TwoSum twoSum;
-    List<TestCase> testCases;
+    List<TestCaseTwoSum> testCases;
 
     @BeforeAll
     void initTestCases(){
         twoSum = new TwoSum();
         testCases = new ArrayList<>();
-        testCases.add(new TestCase(new int[]{3,3}, 6, new int[]{0,1}));
-        testCases.add(new TestCase(new int[]{2,7,11,15}, 9, new int[]{0,1}));
-        testCases.add(new TestCase(new int[]{3,2,4}, 6, new int[]{1,2}));
+        testCases.add(new TestCaseTwoSum(new int[]{3,3}, 6, new int[]{0,1}));
+        testCases.add(new TestCaseTwoSum(new int[]{2,7,11,15}, 9, new int[]{0,1}));
+        testCases.add(new TestCaseTwoSum(new int[]{3,2,4}, 6, new int[]{1,2}));
     }
 
     @Test

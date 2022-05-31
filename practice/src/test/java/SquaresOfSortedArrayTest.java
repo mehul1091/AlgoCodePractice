@@ -14,13 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class SquaresOfSortedArrayTest {
 
-    @Data
-    @AllArgsConstructor
-    class TestCase{
-        int[] input;
-        int[] output;
-    }
-
     SquaresOfSortedArray squaresOfSortedArray;
     List<TestCase> testCases;
 
