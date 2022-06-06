@@ -16,7 +16,7 @@ public class FourSum {
 
             int newTarget = target - arr[i];
             for (int j = i+1; j < n-2; j++) {
-                if(j>i+1 && arr[j] == arr[j-1])
+                if(j>1 && arr[j] == arr[j-1])
                     continue;
 
                 int find = newTarget - arr[j];
