@@ -17,7 +17,6 @@ class FourSumTest {
     void fourSum() {
         System.out.println(fourSum.fourSum(new int[]{1,0,-1,0,-2,2}, 0));
     }
-<<<<<<< HEAD
 
     @Test
     void fourSumTc2() {
@@ -29,6 +28,4 @@ class FourSumTest {
         System.out.println(fourSum.fourSum(new int[]{-2,-1,-1,1,1,2,2}, 0));
     }
 
-=======
->>>>>>> origin/master
 }
