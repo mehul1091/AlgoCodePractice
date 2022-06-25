@@ -1,5 +1,6 @@
 package com.arrays;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +40,7 @@ public class ThreeSum {
         return result;
     }
 
-    public List<List<Integer>> threeSum(int[] arr) {
+    public List<List<Integer>> threeSum1(int[] arr) {
         int n = arr.length;
         Arrays.sort(arr);
         List<List<Integer>> result = new ArrayList<>();
@@ -87,4 +88,44 @@ public class ThreeSum {
         }while (arr[high+1] == arr[high] && low < high);
         return high;
     }
+
+    public List<List<Integer>> threeSum(int[] arr) {
+        Arrays.sort(arr);
+        int n = arr.length;
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < n-2; i++) {
+            if(i>0 && arr[i] == arr[i-1])
+                continue;
+            List<Integer> pres = new ArrayList<>();
+            pres.add(arr[i]);
+            result.add(pres);
+            twoSum(arr, i+1, 0 - arr[i], result, pres);
+            result.remove(pres);
+        }
+        return result;
+    }
+
+    private void twoSum(int[] arr, int low, int target, List<List<Integer>> result, List<Integer> pres) {
+        int high = arr.length - 1;
+        while(low < high){
+            int sum = arr[low] + arr[high];
+            if(sum == target){
+                List<Integer> partialResult = new ArrayList<>(pres);
+                partialResult.add(arr[low]);
+                partialResult.add(arr[high]);
+                result.add(partialResult);
+                low = incLow(low, arr, high);
+                high = incHigh(low, arr, high);
+            }
+            else if(sum < target){
+                low = incLow(low, arr, high);
+            }
+            else{
+                high = incHigh(low, arr, high);
+            }
+        }
+    }
+
+
+
 }
