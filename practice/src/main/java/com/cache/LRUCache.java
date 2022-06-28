@@ -5,12 +5,12 @@ import java.util.HashMap;
 public class LRUCache {
     int capacity;
     HashMap<Integer, Node> map;
-    DoublyLinkedListForCache dll;
+    DoublyLinkedList dll;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
         map=new HashMap<>();
-        dll=new DoublyLinkedListForCache();
+        dll=new DoublyLinkedList();
     }
 
     public void put(int key, int value){

@@ -1,6 +1,9 @@
 package com.cache;
 
-public class DoublyLinkedListForCache {
+import lombok.Data;
+
+@Data
+public class DoublyLinkedList {
 
     Node head;
     Node tail;
@@ -160,5 +163,19 @@ public class DoublyLinkedListForCache {
         node.prev=null;
         node.next=null;
         return node;
+    }
+
+    //search
+    public Node searchNode(int data){
+        //1.list is empty
+        if(head==null)
+            return null;
+
+        //list has elements
+        Node curr = head;
+        while(curr!=null && curr.data!=data){
+            curr=curr.next;
+        }
+        return curr;
     }
 }
