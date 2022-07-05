@@ -21,4 +21,25 @@ class SortStackInAscOrderTest {
         int[] solve = sortStackInAscOrder.solve(arr);
         Assertions.assertArrayEquals(res, solve);
     }
+    @Test
+    public void test3(){
+        int[] arr={1};
+        int[] res={1};
+        int[] solve = sortStackInAscOrder.solve(arr);
+        Assertions.assertArrayEquals(res, solve);
+    }
+    @Test
+    public void test4(){
+        int[] arr={};
+        int[] res={};
+        int[] solve = sortStackInAscOrder.solve(arr);
+        Assertions.assertArrayEquals(res, solve);
+    }
+    @Test
+    public void test5(){
+        int[] arr={1,1,1,1,1,1,1,1,1,1,1,1,1};
+        int[] res={1,1,1,1,1,1,1,1,1,1,1,1,1};
+        int[] solve = sortStackInAscOrder.solve(arr);
+        Assertions.assertArrayEquals(res, solve);
+    }
 }
