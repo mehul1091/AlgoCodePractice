@@ -18,4 +18,14 @@ class ValidParenthesisTest {
     public void test1(){
         Assertions.assertEquals(true, validParenthesis.isValid("()"));
     }
+
+    @Test
+    public void test2(){
+        Assertions.assertEquals(false, validParenthesis.isValid("[(])"));
+    }
+
+    @Test
+    public void test3(){
+        Assertions.assertEquals(true, validParenthesis.isValid("[()]{}{[()()]()}"));
+    }
 }
